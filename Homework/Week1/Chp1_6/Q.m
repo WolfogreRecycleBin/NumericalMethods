@@ -1,5 +1,8 @@
 function [y] = Q(x)
-y = vpa((x-3)*x, 4);
-y = vpa((y + 3)*x - 1, 4);
+old = digits(4);
+y = vpa(x - 3);
+y = vpa(y * x + 3);
+y = vpa(y * x - 1);
+digits(old);
 end
 

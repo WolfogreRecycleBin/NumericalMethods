@@ -1,5 +1,8 @@
 function [y] = R(x)
-y = vpa((x-1)*(x-1),4);
-y = vpa(y*(x-1),4);
+old = digits(4);
+s1 = vpa(x - 1);
+y = vpa(s1 * s1);
+y = vpa(y * s1);
+digits(old);
 end
 
