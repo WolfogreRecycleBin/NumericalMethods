@@ -1,13 +1,14 @@
 function y = Solve(Fun)
 %Input    - Fun is the function 
 %Output - y is the zero
+Fun = eval(strcat('@(x)',Fun));
 a = -1;
 b = 1;
 while Fun(a) * Fun(b) >= 0 
     if -a>=b
-        a = a * 2;
+        b = b * 2;
     else
-        b = a * 2;
+        a = a * 2;
     end
 end
 
@@ -22,12 +23,11 @@ end
 
 p0 = a;
 p1 = b;
-for k=1:10000	
+for k=1:100000
 	p2=p1-Fun(p1)*(p1-p0)/(Fun(p1)-Fun(p0));	
-	err=abs(p2-p1);
 	p0=p1;
 	p1=p2;
-	if (err<0.0000001)
+	if abs(p2-p1)<0.0000001
         break;
     end
 end
