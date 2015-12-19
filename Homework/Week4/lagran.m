@@ -1,21 +1,5 @@
 function [C,L,y0]=lagran(X,Y,x0)
 
-%Input    - X is a vector that contains a list of abscissas
-%            - Y is a vector that contains a list of ordinates
-%Output - C is a matrix that contains the coefficents of
-%              the Lagrange interpolatory polynomial
-%            - L is a matrix that contains the Lagrange
-%              coefficient polynomials
-
-%  NUMERICAL METHODS: Matlab Programs
-% (c) 2004 by John H. Mathews and Kurtis D. Fink
-%  Complementary Software to accompany the textbook:
-%  NUMERICAL METHODS: Using Matlab, Fourth Edition
-%  ISBN: 0-13-065248-2
-%  Prentice-Hall Pub. Inc.
-%  One Lake Street
-%  Upper Saddle River, NJ 07458
-
 w=length(X);
 n=w-1;
 L=zeros(w,w);
